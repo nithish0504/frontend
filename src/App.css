@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -14,14 +13,352 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(10px + 2vmin);
+}
+
+.pdiv {
+  /* Rectangle 116 */
+  position: absolute;
+  width: 370px;
+  height: 610px;
+  left: 135px;
+  top: 158px;
+  background: #0c0cbf;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding-top: 67.31px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.line1 {
+  width: 122px;
+  height: 0px;
+
+  border: 2px solid #ffaf00;
+}
+
+.svgdiv {
+  width: 177.75px;
+  height: 175.54px;
+  border-radius: 168px;
+  background-color: white;
+}
+
+.name {
+  width: 80px;
+  height: 24px;
+
+  font-family: "Flama";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.npara {
+  width: 87px;
+  height: 9px;
+  font-family: "Flama";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 9px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.npara1 {
+  /* lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, */
+
+  width: 288px;
+  height: 150px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  /* or 187% */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.rect1 {
+  /* Rectangle 268 */
+  height: 8px;
+  width: 30px;
+
+  margin-top: 40px;
+  background: #ffaf00;
+  border-radius: 4px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.rect268 {
+  height: 8px;
+  width: 10px;
+  border-radius: 4px;
+  background: #8c8896;
+  opacity: 0.4;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.rightdiv {
+  position: absolute;
+  width: 770px;
+  height: 531px;
+  left: 535px;
+  top: 158px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 16px 2px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+#mynav {
+  min-height: 62px;
+}
+.rhead1 {
+  /* Try SmartStudy */
+
+  position: relative;
+  width: 229px;
+  height: 30px;
+
+  top: 30px;
+  left: 271px;
+
+  font-family: Flama;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.line {
+  width: 31px;
+  height: 0px;
+  margin-left: 370px;
+  margin-top: 20px;
+  border: 3px solid #ffaf00;
+}
+
+.rectangle {
+  position: absolute;
+  width: 375px;
+  height: 68px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #f1f1f1;
+  box-sizing: border-box;
+}
+
+.main-head {
+  position: absolute;
+  width: 178px;
+  height: 28px;
+  left: 98px;
+  top: 128px;
+  font-size: 24px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+}
+
+.cldiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.rdiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.alc {
+  align-items: center;
+}
+
+.vline {
+  /* Line 2 */
+
+  width: 563px;
+  height: 0px;
+
+  border: 1px solid #cbcbcb;
+  transform: rotate(90deg);
+}
+.reclipse1 {
+  /* Ellipse 1 */
+
+  width: 24px;
+  height: 24px;
+  margin-left: 60px;
+  top: 87px;
+  right: 698px;
+  border: 1px solid #0c0cbf;
+  box-sizing: border-box;
+  border-radius: 48px;
+}
+
+.eclipse {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 16px;
+  top: 190px;
+  border-radius: 48px;
+  border: 1px solid #0c0cbf;
+  box-sizing: border-box;
+}
+
+.ps {
+  width: 30px;
+  height: 12px;
+  margin-left: 10px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+.cour {
+  /* Courses */
+  margin-left: 12%;
+  align-self: flex-start;
+  font-family: "Flama";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.r1 {
+  width: 80%;
+  margin-left: 15%;
+  margin-right: 5%;
+
+  flex-wrap: wrap;
+}
+
+.r2 {
+  width: 80%;
+  margin-left: 15%;
+  margin-right: 5%;
+  justify-content: space-around;
+  margin-top: 24px;
+}
+
+.r3 {
+  width: 80%;
+  margin-left: 15%;
+  margin-right: 5%;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.st {
+  width: 57px;
+  height: 16px;
+
+  font-family: Flama;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.vsp {
+  width: 32px;
+  height: 12px;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.rect194 {
+  /* Rectangle 194 */
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 25%;
+  height: 46px;
+  margin-top: 10px;
+  margin-right: 8%;
+  background: #ffffff;
+  opacity: 0.4;
+  border: 1px solid #8c8896;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.dn {
+  display: none;
+}
+
+.rect195 {
+  /* Rectangle 194 */
+
+  width: 622px;
+  min-height: 46px;
+  margin-left: 15%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  opacity: 0.4;
+  border: 1px solid #8c8896;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .App-link {
