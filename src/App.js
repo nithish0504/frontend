@@ -2,23 +2,16 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Quotes from "./quotes";
-
-const TechCardItem = (props) => {
-  const { TechCardData } = props;
-
-  return <div className="rect194"></div>;
-};
+import { Steps } from "rsuite";
+import * as l from "./test.js";
+import Search from "./components/search.js";
+import Nav from "./components/nav.js";
 
 function App() {
   const [result, setData] = useState([]);
-  const [course, setcourse] = useState([]);
+  const [course, setcourse] = useState("");
+  const [university_array, setUniversity] = useState([]);
 
-  function getsomething() {
-    console.log(course);
-  }
-  function handleclickevents(event) {
-    console.log(event.currentTarget.textContent);
-  }
   useEffect(() => {
     let courses = Quotes();
     courses.then(function (result) {
@@ -26,6 +19,22 @@ function App() {
       setData(result);
     });
   }, ["test1"]);
+
+  async function onclickevents(event) {
+    let c = event.currentTarget.textContent;
+    let t = await l.handleclickevents(event).then(function (res) {
+      return res;
+    });
+  }
+
+  const [step, setStep] = React.useState(0);
+  const onChange = (nextStep) => {
+    setStep(nextStep < 0 ? 0 : nextStep > 3 ? 3 : nextStep);
+  };
+
+  const onNext = () => onChange(step + 1);
+  const onPrevious = () => onChange(step - 1);
+
   return (
     <div className="App">
       <link
@@ -44,65 +53,12 @@ function App() {
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"
       ></script>
-
-      <nav
-        className="navbar navbar-expand-lg navbar-light bg-light "
-        id="mynav"
-      >
-        <a className="navbar-brand" href="#">
-          <img
-            src="/docs/4.6/assets/brand/bootstrap-solid.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt=""
-          ></img>
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Engineering
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Course Material
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">
-                Upskill
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">
-                Books
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" tabindex="-1">
-                Universities
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Nav />
       <header className="App-header">
         <div className="pdiv">
-          <div className="svgdiv"></div>
+          <div className="svgdiv">
+            <div className="c2_main"></div>
+          </div>
           <hr className="line1"></hr>
           <h1 className="name">Anisha</h1>
           <p className="npara">Dummy text</p>
@@ -118,34 +74,46 @@ function App() {
           <h1 className="rhead1">Try SmartStudy</h1>
           <hr className="line"></hr>
           <div className="rdiv alc">
-            <div className="reclipse1"></div>
+            <div className="reclipse1 alc">
+              <svg
+                width="8"
+                height="6"
+                viewBox="0 0 8 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="v4 "
+              >
+                <path
+                  d="M1.02869 2.54276L2.62869 4.5999L7.20012 1.3999"
+                  stroke="#0C0CBF"
+                />
+              </svg>
+            </div>
             <p className="ps">step 1</p>
           </div>
+
           <p className="cour">Course</p>
           <div className="rdiv r1">
             {result.map((e) => (
-              <div className="rect194" onClick={handleclickevents}>
+              <div className="rect194" onClick={onclickevents}>
                 {e}
               </div>
             ))}
           </div>
 
-          <div className="dn">
+          <div className="dn" id="toggle_div">
             <div className="rdiv r3">
               <p className="st">stream</p>
               <p className="vsp">see all</p>
             </div>
-            <div className="rect195"></div>
-            <div className="rect195"></div>
-            <div className="rect195"></div>
-            <div className="rect195"></div>
-            <div className="rect195"></div>
+            <div id="streams_div"></div>
           </div>
           <div className="rdiv alc">
             <div className="reclipse1"></div>
             <p className="ps">step 2</p>
           </div>
           <p className="cour">Your University</p>
+          <Search />
           <div className="rdiv alc">
             <div className="reclipse1"></div>
             <p className="ps">step 3</p>
@@ -155,8 +123,11 @@ function App() {
             <div className="reclipse1"></div>
             <p className="ps">step 4</p>
           </div>
-          <p className="cour">Try for free</p>
+          <p className="cour" id="result" onClick={l.heaven}>
+            Try for free
+          </p>
         </div>
+        <script src="./test.js"></script>
       </header>
     </div>
   );
